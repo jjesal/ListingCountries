@@ -29,7 +29,7 @@ class Main {
             let template = document.querySelector('template');
             template = document.importNode(template.content, true);
             let articleTemplate = template.querySelector('article');
-            let mainContainer = document.querySelector('.main-container');
+            let mainContainer = document.querySelector('.main-content');
             let arrArticle = [];
             arrCountries.forEach((country, index) => {
                 let article = articleTemplate.cloneNode(true);
