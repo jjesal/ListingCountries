@@ -53,7 +53,7 @@ class Main {
 
     addEvents({ arrArticle }) {
         arrArticle.forEach(article => {
-            article.html.addEventListener(`click`, () => {
+            article.html.querySelector('button').addEventListener(`click`, () => {
                 this.drawInModal({ country: article.data, target: this.modal.html })
                     .then(() => this.modal.show());
             })
@@ -62,8 +62,12 @@ class Main {
 
     drawInModal({ country, target }) {
         return new Promise((resolve, reject) => {
-            console.log(country);
-            console.log(target);
+            target.querySelector('.modal-title').innerHTML = country.name;
+            target.querySelector('.modal-header img').src = country.flag;
+
+            let arrDetails = Array.from(target.querySelectorAll('.modal-detail'));
+            arrDetails['0'].querySelector('strong').innerHTML = country.region;
+            arrDetails['1'].querySelector('strong').innerHTML = country.subregion;
             resolve();
         });
     }

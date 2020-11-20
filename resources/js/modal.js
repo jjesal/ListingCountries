@@ -2,12 +2,12 @@ class Modal {
     constructor({ id, triger }) {
         this.html = document.querySelector(`${id}`);
         this.trigerSelector = triger;
+        this.closeBtn = this.html.querySelector('.modal-close');
         this.launch();
     }
 
     launch() {
-        let arrTrigers = Array.from(document.querySelectorAll(`${this.trigerSelector}`));
-        this.addEvents(arrTrigers);
+        this.addEvents();
     }
     show() {
         this.html.style.display = "flex";
@@ -24,18 +24,12 @@ class Modal {
 
     }
 
-    addEvents(arrTrigers) {
-        // arrTrigers.forEach(triger => {
-        //     triger.addEventListener(`click`, () => {
-        //         console.log('hola');
-        //         this.show();
-        //     })
-        // });
+    addEvents() {
         document.addEventListener(`keydown`, (e) => {
             if (e.key === "Escape") { this.hide() }
         });
         document.addEventListener(`click`, (e) => {
-            if (e.target == this.html) { this.hide() }
+            if (e.target == this.html || e.target == this.closeBtn) { this.hide() }
         });
     }
 }

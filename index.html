@@ -10,17 +10,19 @@
 </head>
 
 <body>
-    <header>
-
+    <header class="main-header">
+        <h1>
+            Países
+        </h1>
     </header>
     <main class="main-container grid">
         <template>
-            <article id="country" class="card card-test">
+            <article id="country" class="card border">
                 <header class="card-header">
                     <h2 class="card-title">Nombre País</h2>
                     <img src="" class="flag-icon" alt="imagen país">
                 </header>
-                <main>
+                <main class="card-body">
                     <div class="detail">
                         <h4>CAPITAL</h4>
                         <strong>Value</strong>
@@ -38,18 +40,42 @@
                         <strong>Value</strong>
                     </div>
                 </main>
+                <span class="card-cover border">
+                    <button class="btn">
+                        Ver continente
+                    </button>
+                </span>
             </article>
         </template>
 
     </main>
     <div id="my-modal" class="modal-cover">
         <div class="modal-cont">
-            <header>
-                <span>X</span>
+            <header class="modal-header">
+                <h1 class="modal-title">Nombre País</h1>
+                <img class="flag-icon" src="" alt="Bandera País">
+                <span class="modal-close">X</span>
             </header>
+            <article class="modal-body">
+                <div class="modal-detail">
+                    <h4>CONTINENTE</h4>
+                    <strong>Value</strong>
+                </div>
+                <div class="modal-detail">
+                    <h4>SUBCONTINENTE</h4>
+                    <strong>Value</strong>
+                </div>
+            </article>
         </div>
     </div>
-    <!-- <button id="my-btn" class="btn second-color">OK</button> -->
+    <footer>
+        <strong>
+            jjesal.000@gmail.com
+        </strong>
+        <strong>
+            <a href="https://github.com/jjesal"  target="_blank">github.com/jjesal</a>
+        </strong>
+    </footer>
     <script src="./resources/js/main.js"></script>
     <script src="./resources/js/modal.js"></script>
     <script>

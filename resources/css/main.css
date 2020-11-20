@@ -1,46 +1,162 @@
 :root {
     --main-color: white;
     --second-color: dodgerblue;
-    --btn-color: var(--second-color);
-    --btn-bg-color: var(--second-color);
+    --btn-color: black;
+    --btn-bg-color: black;
 }
 
-.main-container {}
-
-body {}
+html,
+body {
+    background-color: #f1f1f1;
+    padding: 0;
+    margin: 0;
+}
 
 * {
     box-sizing: border-box;
     font-family: 'Segoe UI Light', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.main-container {
+    padding: 6rem 3px 2.5rem 3px;
+}
+
+.main-header {
+    background-color: var(--main-color);
+    padding-top: .6em;
+    padding-bottom: .6em;
+    box-shadow: 0 2px 2px -2px #dcdcdc;
+    backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgba(255, 255, 255, .72);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.main-header>h1 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: 100;
+}
+
+footer {
+    background-color: var(--main-color);
+    text-align: center;
+    padding: 1rem 0 1rem 0;
+    color: black;
+    font-weight: 600;
+    font-size: 1em;
+    font-style: italic;
+}
+
+footer strong {
+    display: block;
+}
+
 .flag-icon {
     width: 3.75em;
+    justify-self: end;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 115, 230);
+}
+
+.modal-header .flag-icon {
+    /* height: 1em; */
+    width: 1.8em;
+    margin-left: .3em;
+    justify-self: end;
 }
 
 .grid {
     display: grid;
-    grid-row-gap: 1rem;
-    grid-column-gap: 1rem;
+    row-gap: 1rem;
+    column-gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
     place-content: center;
+}
+
+.border {
+    border-radius: 20px;
 }
 
 .card {
     max-width: 100%;
     height: 100%;
     width: 100%;
-    background-color: var(--second-color);
+    background-color: var(--main-color);
     box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .1);
-    border-radius: 20px;
     transition: transform 0.4s;
     padding: 20px 15px;
     cursor: pointer;
+    display: grid;
+    align-items: center;
 }
 
 .card:hover {
     box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .1);
     transform: scale(0.9, 0.9);
+}
+
+.card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    text-align: center;
+}
+
+.card-header {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+}
+
+.card-title {
+    font-size: 1.7rem;
+    margin-top: 0;
+}
+
+.detail h4 {
+    font-size: 1em;
+}
+
+.detail strong {
+    color: rgb(52 52 52);
+    font-style: italic;
+    font-weight: 100;
+}
+
+.card-cover {
+    transition: all 0.3s;
+    transition-property: height, width;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 0px;
+    height: 0px;
+    margin: auto;
+    font-size: 2.3rem;
+    color: white;
+    display: grid;
+    place-content: center;
+    background-color: #6363636b;
+    font-weight: bolder;
+    text-shadow: 2px 2px 8px #040404;
+}
+
+.card:hover .card-cover {
+    visibility: visible;
+    height: 100%;
+    width: 100%;
 }
 
 
@@ -49,24 +165,26 @@ body {}
     width: 200px;
 } */
 
-
-/* .blur {
-    backdrop-filter: saturate(180%) blur(20px) ;
-} */
+.blur {
+    backdrop-filter: saturate(180%) blur(20px);
+}
 
 .btn {
     display: inline-block;
     min-width: 135px;
     text-align: center;
     margin-top: 20px;
-    color: #fff;
-    background-color: var(--btn-bg-color);
-    border: 2px solid var(--btn-bg-color);
+    color: var(--btn-color);
+    background-color: #ffffffc7;
+    border: 2px solid var(--btn-color);
     padding: 8px 20px;
     border-radius: 35px;
     box-shadow: 0px 5px 18px rgba(0, 0, 0, .2);
     cursor: pointer;
     transition: all 0.3s ease 0s;
+    font-size: .5em;
+    font-weight: 600;
+    width: 9em;
 }
 
 .btn:focus {
@@ -74,10 +192,10 @@ body {}
 }
 
 .btn:hover {
-    color: var(--btn-color);
-    background-color: transparent;
+    /* color: white; */
+    background-color: white;
     border-radius: 6px;
     transition: all 0.3s ease 0s;
-    box-shadow: 0px 15px 18px rgba(32, 119, 191, 0.4);
+    box-shadow: 0px 15px 18px rgba(5, 8, 10, 0.4);
     transform: translateY(-6px);
 }
